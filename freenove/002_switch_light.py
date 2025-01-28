@@ -1,14 +1,13 @@
 from gpiozero import LED, Button
+from signal import pause
 
 def main():
     led = LED(17)
     button = Button(18)
 
-    while True:
-        if button.is_pressed:
-            led.on()
-        else:
-            led.off()
+    button.when_activated(led.toggle)
+
+    pause()
 
 
 
