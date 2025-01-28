@@ -2,15 +2,15 @@ from gpiozero import LED
 import time
 
 
-def main():
+def main(delay: float = 1.0):
     led = LED(17)
 
     while True:
         led.on()
-        time.sleep(1)
+        time.sleep(delay)
         led.off()
-        time.sleep(1)
+        time.sleep(delay)
 
 
 if __name__ == "__main__":
-    main()
+    main(delay=0.5)
