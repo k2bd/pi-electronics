@@ -5,7 +5,7 @@ def main():
     led = LED(17)
     button = Button(18)
 
-    button.when_activated(led.toggle)
+    button.when_activated = led.toggle
 
     pause()
 
